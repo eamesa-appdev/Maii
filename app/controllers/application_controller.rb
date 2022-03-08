@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
 
 
   def homepage
-    render ({:template => "home.html.erb"})
+    redirect_to("/tasks")
+    #render ({:template => "home.html.erb"})
   end
 
 end
