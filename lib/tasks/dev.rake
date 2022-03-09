@@ -2,7 +2,7 @@ desc "Hydrate the database with some sample data to look at so that developing i
 task({ :sample_data => :environment}) do
   User.destroy_all
 
-  user = User.create email: "alice@example.com", password: "password"
+  user = User.create email: "harry@example.com", password: "password"
   
   20.times do
     task = Task.new
