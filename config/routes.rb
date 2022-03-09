@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Routes for the Task resource:
-
+  get("/", { :controller => "tasks", :action => "index" })
   # CREATE
   post("/insert_task", { :controller => "tasks", :action => "create" })
           
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
              
   #------------------------------
 
-get("/", {:controller => "application", :action => "homepage"})
+#get("/", {:controller => "application", :action => "homepage"})
 
 #get("/comparador", { :controller => "", :action => "" })
 

@@ -10,4 +10,8 @@
 #  user_id    :integer
 #
 class Task < ApplicationRecord
+
+  belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })
+  validates(:body, { :inclusion => { :in => [ "not yet started", "in progress", "completed" ] } })
+  validates(:body, { :presence => true })
 end
