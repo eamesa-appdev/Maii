@@ -3,7 +3,7 @@
 <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
   <div class="card-header">Bienvenido a Maii!!</div>
   <div class="card-body">
-    <p class="card-text">En Maii estamos convencidos en el poder del ahorro, y queremos darte el control de tus desiciones de inversion.</p>
+    <p class="card-text">En Maii estamos convencidos en el poder del ahorro, y por eso queremos darte toda la informacion para que tomes el control de tus inversiones en fondos de inversion colectiva.</p>
   </div>
 </div>
 
@@ -13,10 +13,25 @@
   <li>Hacerle seguimiento a tus FIC preferidos</li>
 </ul>
 
-<div>
-<% @parsed_data.each do |fund|%>
- <ul>
-  <li><%= fund.fetch("nombre_patrimonio")%></li>
-</ul> 
-<%end%>
-</div>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Fondo</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Compartimiento</th>
+      <th scope="col">Tipo participacion</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @parsed_data.each do |fund|%>
+    <tr>
+      <th scope="row">#</th>
+      <td><%= fund.fetch("nombre_patrimonio")%></td>
+      <td><%= fund.fetch("principal_compartimento")%></td>
+      <td><%= fund.fetch("tipo_participacion")%></td>
+    </tr>
+    <%end%>
+      </tbody>
+</table>
