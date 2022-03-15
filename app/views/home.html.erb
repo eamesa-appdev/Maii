@@ -1,3 +1,19 @@
-<h1>Welcome to Maii!</h1>
+<h1>Bienvenidoa Maii!</h1>
 
-<div> This applications still needs to be build out by me!</div>
+<div> En Maii estamos convencidos en el poder del ahorro, y queremos darte el control de tus desiciones de inversion.</div>
+<h3>Con Maii puedes:</h3>
+<ul> 
+  <li>Comparar los FIC disponibles en el mercado</li>
+  <li>Hacerle seguimiento s tus FIC preferidos</li>
+</ul>
+
+<div> Con Maii This applications still needs to be build out by me!</div>
+<div> Con Maii This applications still needs to be build out by me!</div>
+
+<div>
+<% @parsed_data.each do |fund|%>
+ <ul>
+  <li><%= fund.fetch("nombre_patrimonio")%></li>
+</ul> 
+<%end%>
+</div>
