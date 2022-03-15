@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
     raw_data = open(api).read
     @parsed_data = JSON.parse(raw_data)
 
-
-
     render ({:template => "home.html.erb"})
   end
 

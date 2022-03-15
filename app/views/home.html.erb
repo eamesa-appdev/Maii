@@ -1,4 +1,4 @@
-<h1>Bienvenido a Maii!</h1>
+<div><h1>Bienvenido a Maii!</h1></div>
 
 <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
   <div class="card-header">Bienvenido a Maii!!</div>
@@ -25,9 +25,9 @@
     </tr>
   </thead>
   <tbody>
-  <% @parsed_data.each do |fund|%>
+  <% @parsed_data.each_with_index do |fund, count |%>
     <tr>
-      <th scope="row">#</th>
+      <th scope="row"><%= count+1 %></th>
       <td><%= fund.fetch("nombre_patrimonio")%></td>
       <td><%= fund.fetch("principal_compartimento")%></td>
       <td><%= fund.fetch("tipo_participacion")%></td>
