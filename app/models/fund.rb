@@ -12,4 +12,5 @@
 #  administradora_id          :integer
 #
 class Fund < ApplicationRecord
+  validates_uniqueness_of :nombre_fondo
 end
