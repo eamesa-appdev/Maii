@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Administradora #<%= @the_administradora.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/administradoras">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_administradora/<%= @the_administradora.id %>">
+          Delete administradora
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Nombre administradora
+      </dt>
+      <dd>
+        <%= @the_administradora.nombre_administradora %>
+      </dd>
+
+      <dt>
+        Tipo adminsitradora
+      </dt>
+      <dd>
+        <%= @the_administradora.tipo_adminsitradora %>
+      </dd>
+
+      <dt>
+        Fondos count
+      </dt>
+      <dd>
+        <%= @the_administradora.fondos_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_administradora.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_administradora.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit administradora
+    </h2>
+
+    <form action="/modify_administradora/<%= @the_administradora.id %>"  method="post" >
+      <div>
+        <label for="nombre_administradora_box">
+          Nombre administradora
+        </label>
+
+        <input type="text" id="nombre_administradora_box" name="query_nombre_administradora" value="<%= @the_administradora.nombre_administradora %>">
+      </div>
+
+      <div>
+        <label for="tipo_adminsitradora_box">
+          Tipo adminsitradora
+        </label>
+
+        <input type="text" id="tipo_adminsitradora_box" name="query_tipo_adminsitradora" value="<%= @the_administradora.tipo_adminsitradora %>">
+      </div>
+
+      <div>
+        <label for="fondos_count_box">
+          Fondos count
+        </label>
+
+        <input type="text" id="fondos_count_box" name="query_fondos_count" value="<%= @the_administradora.fondos_count %>">
+      </div>
+
+      <button>
+        Update administradora
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

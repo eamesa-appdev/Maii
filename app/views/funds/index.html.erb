@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all funds
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new fund
+    </h2>
+
+    <form action="/insert_fund" method="post">
+      <div>
+        <label for="nombre_fondo_box">
+          Nombre fondo
+        </label>
+
+        <input type="text" id="nombre_fondo_box" name="query_nombre_fondo">
+      </div>
+
+      <div>
+        <label for="administradora_id_box">
+          Administradora
+        </label>
+
+        <input type="text" id="administradora_id_box" name="query_administradora_id">
+      </div>
+
+      <div>
+        <label for="tipo_fondo_box">
+          Tipo fondo
+        </label>
+
+        <input type="text" id="tipo_fondo_box" name="query_tipo_fondo">
+      </div>
+
+      <div>
+        <label for="codigo_tipo_fondo_box">
+          Codigo tipo fondo
+        </label>
+
+        <input type="text" id="codigo_tipo_fondo_box" name="query_codigo_tipo_fondo">
+      </div>
+
+      <div>
+        <label for="tipo_participaciones_count_box">
+          Tipo participaciones count
+        </label>
+
+        <input type="text" id="tipo_participaciones_count_box" name="query_tipo_participaciones_count">
+      </div>
+
+      <button>
+        Create fund
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Nombre fondo
+        </th>
+
+        <th>
+          Administradora
+        </th>
+
+        <th>
+          Tipo fondo
+        </th>
+
+        <th>
+          Codigo tipo fondo
+        </th>
+
+        <th>
+          Tipo participaciones count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_funds.each do |a_fund| %>
+      <tr>
+        <td>
+          <%= a_fund.id %>
+        </td>
+
+        <td>
+          <%= a_fund.nombre_fondo %>
+        </td>
+
+        <td>
+          <%= a_fund.administradora_id %>
+        </td>
+
+        <td>
+          <%= a_fund.tipo_fondo %>
+        </td>
+
+        <td>
+          <%= a_fund.codigo_tipo_fondo %>
+        </td>
+
+        <td>
+          <%= a_fund.tipo_participaciones_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_fund.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_fund.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/funds/<%= a_fund.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

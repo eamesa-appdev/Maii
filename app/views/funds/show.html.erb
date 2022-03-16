@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Fund #<%= @the_fund.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/funds">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_fund/<%= @the_fund.id %>">
+          Delete fund
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Nombre fondo
+      </dt>
+      <dd>
+        <%= @the_fund.nombre_fondo %>
+      </dd>
+
+      <dt>
+        Administradora
+      </dt>
+      <dd>
+        <%= @the_fund.administradora_id %>
+      </dd>
+
+      <dt>
+        Tipo fondo
+      </dt>
+      <dd>
+        <%= @the_fund.tipo_fondo %>
+      </dd>
+
+      <dt>
+        Codigo tipo fondo
+      </dt>
+      <dd>
+        <%= @the_fund.codigo_tipo_fondo %>
+      </dd>
+
+      <dt>
+        Tipo participaciones count
+      </dt>
+      <dd>
+        <%= @the_fund.tipo_participaciones_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_fund.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_fund.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit fund
+    </h2>
+
+    <form action="/modify_fund/<%= @the_fund.id %>"  method="post" >
+      <div>
+        <label for="nombre_fondo_box">
+          Nombre fondo
+        </label>
+
+        <input type="text" id="nombre_fondo_box" name="query_nombre_fondo" value="<%= @the_fund.nombre_fondo %>">
+      </div>
+
+      <div>
+        <label for="administradora_id_box">
+          Administradora
+        </label>
+
+        <input type="text" id="administradora_id_box" name="query_administradora_id" value="<%= @the_fund.administradora_id %>">
+      </div>
+
+      <div>
+        <label for="tipo_fondo_box">
+          Tipo fondo
+        </label>
+
+        <input type="text" id="tipo_fondo_box" name="query_tipo_fondo" value="<%= @the_fund.tipo_fondo %>">
+      </div>
+
+      <div>
+        <label for="codigo_tipo_fondo_box">
+          Codigo tipo fondo
+        </label>
+
+        <input type="text" id="codigo_tipo_fondo_box" name="query_codigo_tipo_fondo" value="<%= @the_fund.codigo_tipo_fondo %>">
+      </div>
+
+      <div>
+        <label for="tipo_participaciones_count_box">
+          Tipo participaciones count
+        </label>
+
+        <input type="text" id="tipo_participaciones_count_box" name="query_tipo_participaciones_count" value="<%= @the_fund.tipo_participaciones_count %>">
+      </div>
+
+      <button>
+        Update fund
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

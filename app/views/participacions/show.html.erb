@@ -1,0 +1,176 @@
+<div>
+  <div>
+    <h1>
+      Participacion #<%= @the_participacion.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/participacions">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_participacion/<%= @the_participacion.id %>">
+          Delete participacion
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Fund
+      </dt>
+      <dd>
+        <%= @the_participacion.fund_id %>
+      </dd>
+
+      <dt>
+        Codigo participaciones
+      </dt>
+      <dd>
+        <%= @the_participacion.codigo_participaciones %>
+      </dd>
+
+      <dt>
+        Valor fondo
+      </dt>
+      <dd>
+        <%= @the_participacion.valor_fondo %>
+      </dd>
+
+      <dt>
+        Rentabilidad diaria
+      </dt>
+      <dd>
+        <%= @the_participacion.rentabilidad_diaria %>
+      </dd>
+
+      <dt>
+        Rentabilidad mensual
+      </dt>
+      <dd>
+        <%= @the_participacion.rentabilidad_mensual %>
+      </dd>
+
+      <dt>
+        Rentabilidad semestral
+      </dt>
+      <dd>
+        <%= @the_participacion.rentabilidad_semestral %>
+      </dd>
+
+      <dt>
+        Rentabilidad anual
+      </dt>
+      <dd>
+        <%= @the_participacion.rentabilidad_anual %>
+      </dd>
+
+      <dt>
+        Numero inversionistas
+      </dt>
+      <dd>
+        <%= @the_participacion.numero_inversionistas %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_participacion.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_participacion.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit participacion
+    </h2>
+
+    <form action="/modify_participacion/<%= @the_participacion.id %>"  method="post" >
+      <div>
+        <label for="fund_id_box">
+          Fund
+        </label>
+
+        <input type="text" id="fund_id_box" name="query_fund_id" value="<%= @the_participacion.fund_id %>">
+      </div>
+
+      <div>
+        <label for="codigo_participaciones_box">
+          Codigo participaciones
+        </label>
+
+        <input type="text" id="codigo_participaciones_box" name="query_codigo_participaciones" value="<%= @the_participacion.codigo_participaciones %>">
+      </div>
+
+      <div>
+        <label for="valor_fondo_box">
+          Valor fondo
+        </label>
+
+        <input type="text" id="valor_fondo_box" name="query_valor_fondo" value="<%= @the_participacion.valor_fondo %>">
+      </div>
+
+      <div>
+        <label for="rentabilidad_diaria_box">
+          Rentabilidad diaria
+        </label>
+
+        <input type="text" id="rentabilidad_diaria_box" name="query_rentabilidad_diaria" value="<%= @the_participacion.rentabilidad_diaria %>">
+      </div>
+
+      <div>
+        <label for="rentabilidad_mensual_box">
+          Rentabilidad mensual
+        </label>
+
+        <input type="text" id="rentabilidad_mensual_box" name="query_rentabilidad_mensual" value="<%= @the_participacion.rentabilidad_mensual %>">
+      </div>
+
+      <div>
+        <label for="rentabilidad_semestral_box">
+          Rentabilidad semestral
+        </label>
+
+        <input type="text" id="rentabilidad_semestral_box" name="query_rentabilidad_semestral" value="<%= @the_participacion.rentabilidad_semestral %>">
+      </div>
+
+      <div>
+        <label for="rentabilidad_anual_box">
+          Rentabilidad anual
+        </label>
+
+        <input type="text" id="rentabilidad_anual_box" name="query_rentabilidad_anual" value="<%= @the_participacion.rentabilidad_anual %>">
+      </div>
+
+      <div>
+        <label for="numero_inversionistas_box">
+          Numero inversionistas
+        </label>
+
+        <input type="text" id="numero_inversionistas_box" name="query_numero_inversionistas" value="<%= @the_participacion.numero_inversionistas %>">
+      </div>
+
+      <button>
+        Update participacion
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
