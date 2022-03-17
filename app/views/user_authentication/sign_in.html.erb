@@ -1,23 +1,22 @@
-<h1>Sign in</h1>
+<h1>Entra a tu cuenta</h1>
 
 <form action="/user_verify_credentials" method="post">
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Enter your email..." type="text">
-  </div>
+    <div class="form-group">
+      <label for="email_box" class="form-label mt-4">Tu correo electronico</label>
+      <input type="email" class="form-control" id="email_box" name="query_email" aria-describedby="emailHelp" placeholder="maii@ejemplo.com" type="text">
+    </div>
+    <div class="form-group">
+      <label for="password_box" class="form-label mt-4">Tu contrasena</label>
+      <input type="password" class="form-control" id="password_box" name="query_password" placeholder="******">
+    </div>
 
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Enter your password..." type="password">
-  </div>
-
-  <button>
-    Sign in
+  <button class="btn btn-outline-primary">
+    Entrar a mi cuenta
   </button>
 </form>
 
 <hr>
 
 <p>
-  Or, <a href="/user_sign_up">Sign up</a> instead.
+  Si todavia no haces parte de Maii, <a href="/user_sign_up">crea tu cuenta</a>
 </p>

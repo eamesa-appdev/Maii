@@ -13,4 +13,6 @@
 #
 class Fund < ApplicationRecord
   validates_uniqueness_of :nombre_fondo
+  belongs_to(:administradora, { :required => true, :class_name => "Administradora", :foreign_key => "administradora_id", :counter_cache => :fondos_count })
+  has_many(:tipo_participaciones, { :class_name => "Participacion", :foreign_key => "fund_id", :dependent => :destroy })
 end

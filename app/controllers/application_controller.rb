@@ -22,11 +22,15 @@ class ApplicationController < ActionController::Base
     raw_data = open(api).read
     @parsed_data = JSON.parse(raw_data)
 
-      #@parsed_data.where each do
-
     render ({:template => "home.html.erb"})
   end
 
+  def portafolio
+    render ({:template => "portafolio.html.erb"})
+  end
 
+  def nosotros
+    render ({:template => "nosotros.html.erb"})
+  end
 
 end

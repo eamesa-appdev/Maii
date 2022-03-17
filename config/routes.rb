@@ -1,60 +1,30 @@
 Rails.application.routes.draw do
 
   # Routes for the Participacion resource:
-
-  # CREATE
-  post("/insert_participacion", { :controller => "participacions", :action => "create" })
-          
+        
   # READ
   get("/participacions", { :controller => "participacions", :action => "index" })
   
   get("/participacions/:path_id", { :controller => "participacions", :action => "show" })
   
-  # UPDATE
-  
-  post("/modify_participacion/:path_id", { :controller => "participacions", :action => "update" })
-  
-  # DELETE
-  get("/delete_participacion/:path_id", { :controller => "participacions", :action => "destroy" })
-
   #------------------------------
 
   # Routes for the Fund resource:
-
-  # CREATE
-  post("/insert_fund", { :controller => "funds", :action => "create" })
           
   # READ
   get("/funds", { :controller => "funds", :action => "index" })
   
   get("/funds/:path_id", { :controller => "funds", :action => "show" })
   
-  # UPDATE
-  
-  post("/modify_fund/:path_id", { :controller => "funds", :action => "update" })
-  
-  # DELETE
-  get("/delete_fund/:path_id", { :controller => "funds", :action => "destroy" })
-
   #------------------------------
 
   # Routes for the Administradora resource:
 
-  # CREATE
-  post("/insert_administradora", { :controller => "administradoras", :action => "create" })
-          
   # READ
   get("/administradoras", { :controller => "administradoras", :action => "index" })
   
   get("/administradoras/:path_id", { :controller => "administradoras", :action => "show" })
   
-  # UPDATE
-  
-  post("/modify_administradora/:path_id", { :controller => "administradoras", :action => "update" })
-  
-  # DELETE
-  get("/delete_administradora/:path_id", { :controller => "administradoras", :action => "destroy" })
-
   #------------------------------
 
   # Routes for the Favorito resource:
@@ -104,7 +74,9 @@ Rails.application.routes.draw do
   #------------------------------
 
 get("/", {:controller => "application", :action => "homepage"})
-get("/test", {:controller => "application", :action => "test"})
+get("/portafolio", {:controller => "application", :action => "portafolio"})
+get("/nosotros", {:controller => "application", :action => "nosotros"})
+
 
 
 end

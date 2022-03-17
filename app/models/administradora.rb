@@ -11,5 +11,5 @@
 #
 class Administradora < ApplicationRecord
   validates_uniqueness_of :nombre_administradora
-  # repeat for fondos model
+  has_many(:fondos, { :class_name => "Fund", :foreign_key => "administradora_id", :dependent => :destroy })
 end

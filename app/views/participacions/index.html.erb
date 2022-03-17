@@ -7,93 +7,10 @@
 </div>
 
 <hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new participacion
-    </h2>
-
-    <form action="/insert_participacion" method="post">
-      <div>
-        <label for="fund_id_box">
-          Fund
-        </label>
-
-        <input type="text" id="fund_id_box" name="query_fund_id">
-      </div>
-
-      <div>
-        <label for="codigo_participaciones_box">
-          Codigo participaciones
-        </label>
-
-        <input type="text" id="codigo_participaciones_box" name="query_codigo_participaciones">
-      </div>
-
-      <div>
-        <label for="valor_fondo_box">
-          Valor fondo
-        </label>
-
-        <input type="text" id="valor_fondo_box" name="query_valor_fondo">
-      </div>
-
-      <div>
-        <label for="rentabilidad_diaria_box">
-          Rentabilidad diaria
-        </label>
-
-        <input type="text" id="rentabilidad_diaria_box" name="query_rentabilidad_diaria">
-      </div>
-
-      <div>
-        <label for="rentabilidad_mensual_box">
-          Rentabilidad mensual
-        </label>
-
-        <input type="text" id="rentabilidad_mensual_box" name="query_rentabilidad_mensual">
-      </div>
-
-      <div>
-        <label for="rentabilidad_semestral_box">
-          Rentabilidad semestral
-        </label>
-
-        <input type="text" id="rentabilidad_semestral_box" name="query_rentabilidad_semestral">
-      </div>
-
-      <div>
-        <label for="rentabilidad_anual_box">
-          Rentabilidad anual
-        </label>
-
-        <input type="text" id="rentabilidad_anual_box" name="query_rentabilidad_anual">
-      </div>
-
-      <div>
-        <label for="numero_inversionistas_box">
-          Numero inversionistas
-        </label>
-
-        <input type="text" id="numero_inversionistas_box" name="query_numero_inversionistas">
-      </div>
-
-      <button>
-        Create participacion
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
 <div>
   <div>
     <table border="1">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           Fund
@@ -141,9 +58,6 @@
 
       <% @list_of_participacions.each do |a_participacion| %>
       <tr>
-        <td>
-          <%= a_participacion.id %>
-        </td>
 
         <td>
           <%= a_participacion.fund_id %>

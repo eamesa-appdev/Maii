@@ -15,4 +15,6 @@
 #  fund_id                :integer
 #
 class Participacion < ApplicationRecord
+  belongs_to(:fondo, { :required => true, :class_name => "Fund", :foreign_key => "fund_id", :counter_cache => :tipo_participaciones_count })
+  has_many(:favoritos, { :class_name => "Favorito", :foreign_key => "participacion_id", :dependent => :destroy })
 end
