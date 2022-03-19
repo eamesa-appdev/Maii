@@ -1,6 +1,6 @@
 class FavoritosController < ApplicationController
   def index
-    matching_favoritos = Favorito.all
+    matching_favoritos = Favorito.where({ :user_id => session[:user_id]})
 
     @list_of_favoritos = matching_favoritos.order({ :created_at => :desc })
 
