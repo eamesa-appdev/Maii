@@ -34,8 +34,9 @@
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
+        <%if session.fetch(:user_id) != nil%>
         <li class="nav-item">
-          <a class="nav-link" href="/participacions">Fondos</a>
+          <a class="nav-link" href="/administradoras">Agregar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/favoritos">Comparador</a>
@@ -43,27 +44,27 @@
         <li class="nav-item">
           <a class="nav-link" href="/portafolio">Mi portafolio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user_sign_up">Unete a Maii</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user_sign_in">Entra a tu cuenta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user_sign_out">Salir de tu cuenta</a>
-        </li>
+        <%end%>
         <li class="nav-item">
           <a class="nav-link" href="/nosotros">Nosotros</a>
         </li>
+        <%if session.fetch(:user_id) == nil%>
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_up">Unete a Maii</a>
+        <%end%>
+        </li>
+        <%if session.fetch(:user_id) == nil%>
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_in">Entra a tu cuenta</a>
+        </li>
+        <%else%>
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_out">Salir de tu cuenta</a>
+        </li>
+        <%end%>
     </div>
   </div>
 </nav>
-
-
-
-
-
-
     <%= yield %>
   </body>
 </html>

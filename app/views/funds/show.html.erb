@@ -1,131 +1,47 @@
 <div>
-  <div>
-    <h1>
-      Fund #<%= @the_fund.id %> details
-    </h1>
-
-    <div>
-      <div>
-        <a href="/funds">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_fund/<%= @the_fund.id %>">
-          Delete fund
-        </a>
-      </div>
-    </div>
-
-    <dl>
-      <dt>
-        Nombre fondo
-      </dt>
-      <dd>
-        <%= @the_fund.nombre_fondo %>
-      </dd>
-
-      <dt>
-        Administradora
-      </dt>
-      <dd>
-        <%= @the_fund.administradora_id %>
-      </dd>
-
-      <dt>
-        Tipo fondo
-      </dt>
-      <dd>
-        <%= @the_fund.tipo_fondo %>
-      </dd>
-
-      <dt>
-        Codigo tipo fondo
-      </dt>
-      <dd>
-        <%= @the_fund.codigo_tipo_fondo %>
-      </dd>
-
-      <dt>
-        Tipo participaciones count
-      </dt>
-      <dd>
-        <%= @the_fund.tipo_participaciones_count %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_fund.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_fund.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
 </div>
-
 <hr>
-
-
+<div>
+  <h4>
+    Sigue estos pasos para agregar un nuevo FIC favorito para comparar.
+  </h4>
+  <ul class="list-group">
+    <li class="list-group-item">Selecciona la Sociedad Administradora</li>
+    <li class="list-group-item">Selecciona el Fondo</li>
+    <li class="list-group-item active">Selecciona el tipo de participacion y agregala a tus favoritos</li>
+  </ul>
+</div>
+<hr>
 <div>
   <div>
-    <h2>
-      Edit fund
-    </h2>
+    <h4>
+      Selecciona una participacion del <%= @the_fund.nombre_fondo %> para agregarla a tus favoritos
+    </h4>
 
-    <form action="/modify_fund/<%= @the_fund.id %>"  method="post" >
+    <form action="/insert_favorito" method="post">
+     <% @the_fund.tipo_participaciones.each do |una_part| %>
       <div>
-        <label for="nombre_fondo_box">
-          Nombre fondo
+        <label for="participacion_id_box">
+          Participacion
         </label>
-
-        <input type="text" id="nombre_fondo_box" name="query_nombre_fondo" value="<%= @the_fund.nombre_fondo %>">
+        <input type="hidden" id="participacion_id_box" name="query_participacion_id"  value="<%= una_part.id%>"
       </div>
-
       <div>
-        <label for="administradora_id_box">
-          Administradora
+        <label for="user_id_box">
+          User
         </label>
-
-        <input type="text" id="administradora_id_box" name="query_administradora_id" value="<%= @the_fund.administradora_id %>">
+        <input type="hidden" id="user_id_box" name="query_user_id" value="<%=@current_user.id%>">
       </div>
-
-      <div>
-        <label for="tipo_fondo_box">
-          Tipo fondo
-        </label>
-
-        <input type="text" id="tipo_fondo_box" name="query_tipo_fondo" value="<%= @the_fund.tipo_fondo %>">
-      </div>
-
-      <div>
-        <label for="codigo_tipo_fondo_box">
-          Codigo tipo fondo
-        </label>
-
-        <input type="text" id="codigo_tipo_fondo_box" name="query_codigo_tipo_fondo" value="<%= @the_fund.codigo_tipo_fondo %>">
-      </div>
-
-      <div>
-        <label for="tipo_participaciones_count_box">
-          Tipo participaciones count
-        </label>
-
-        <input type="text" id="tipo_participaciones_count_box" name="query_tipo_participaciones_count" value="<%= @the_fund.tipo_participaciones_count %>">
-      </div>
-
-      <button>
-        Update fund
+      <button class="btn btn-outline-secondary">
+        Agregar la participacion tipo <%= una_part.codigo_participaciones %>
       </button>
+      <%end%>
     </form>
-  </div>
-</div>
 
-<hr>
+    <hr>
+    <div>
+        <a class="btn btn-outline-primary" href="/administradoras" role="button">Selecciona otra Sociedad Administradora</a>
+        <a class="btn btn-outline-primary" href="/administradoras/<%=@the_fund.administradora_id%>" role="button">Selecciona otro fondo de la misma Sociedad Administradora</a>
+    </div>
+
+

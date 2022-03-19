@@ -1,37 +1,22 @@
-<div><h1>Bienvenido a Maii!</h1></div>
+<div><hr></div>
 
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Bienvenido a Maii!!</div>
-  <div class="card-body">
-    <p class="card-text">En Maii estamos convencidos en el poder del ahorro, y por eso queremos darte toda la informacion para que tomes el control de tus inversiones en fondos de inversion colectiva.</p>
-  </div>
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenido a Maii</h1>
+  <p class="lead">En Maii estamos convencidos en el poder del ahorro y la inversion, y por eso queremos darte toda la informacion para que tomes el control de tus inversiones en fondos de inversion colectiva.
+  </p>
+  <hr class="my-4">
+  <p>Para tomar control de tus inversiones en fondos de inversion colectiva necesitas la informacion de los fondos disponibles en el mercado. Maii esta aqui para ayudarte a encontrar esa informacion de manera facil. Con Maii puedes:</p>
+  <ul> 
+  <li>Comparar los FIC disponibles en el mercado</li>
+  <li>(Proximamente) Hacerle seguimiento a tus FIC preferidos</li>
+</ul>
+<p class="text-primary">Seguimos trabajando en construir mas herramientas para inversionistas como tu</p>
+  <%if session.fetch(:user_id) != nil%>
+  <a class="btn btn-outline-primary" href="/administradoras" role="button">Agrega un favorito</a>
+  <%end%>
+  <%if session.fetch(:user_id) == nil%>
+  <a class="btn btn-outline-primary" href="/user_sign_up" role="button">Unete a Maii</a>
+  <a class="btn btn-outline-primary" href="/user_sign_in" role="button">Entra a tu cuenta</a>
+  <%end%>
 </div>
 
-<h3>Con Maii puedes:</h3>
-<ul> 
-  <li>Comparar los FIC disponibles en el mercado</li>
-  <li>Hacerle seguimiento a tus FIC preferidos</li>
-</ul>
-
-
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Fondo</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Compartimiento</th>
-      <th scope="col">Tipo participacion</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @parsed_data.each_with_index do |fund, count |%>
-    <tr>
-      <th scope="row"><%= count+1 %></th>
-      <td><%= fund.fetch("nombre_patrimonio")%></td>
-      <td><%= fund.fetch("principal_compartimento")%></td>
-      <td><%= fund.fetch("tipo_participacion")%></td>
-    </tr>
-    <%end%>
-      </tbody>
-</table>

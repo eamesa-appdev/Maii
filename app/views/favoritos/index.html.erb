@@ -39,7 +39,7 @@
             <td><%= a_favorito.participacion.rentabilidad_mensual %></td>
             <td><%= a_favorito.participacion.rentabilidad_semestral %></td>
             <td><%= a_favorito.participacion.rentabilidad_anual %></td>
-            <td> <a  href="/favoritos/<%= a_favorito.id %>">Eliminar</a></td>
+            <td> <a href="/delete_favorito/<%= a_favorito.id %>">Eliminar</a></td>
           </tr>
         <%end%>
       </tbody>
@@ -59,24 +59,4 @@
       </ul>
       <a class="btn btn-outline-primary" href="/administradoras" role="button">Agrega un favorito</a>
     </div>
-    
-    <form action="/insert_favorito" method="post">
-      <div>
-        <label for="participacion_id_box">
-          Participacion
-        </label>
-        <input type="text" id="participacion_id_box" name="query_participacion_id">
-      </div>
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-      <button>
-        Create favorito
-      </button>
-    </form>
-  </div>
-</div>
-</div>
+  

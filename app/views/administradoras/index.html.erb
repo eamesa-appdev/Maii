@@ -1,10 +1,4 @@
-
 <div>
-  <div>
-    <h1>
-      Sociedades administradoras
-    </h1>
-  </div>
 </div>
 <hr>
     <div>
@@ -14,50 +8,15 @@
       <ul class="list-group">
         <li class="list-group-item active">Selecciona la Sociedad Administradora</li>
         <li class="list-group-item">Selecciona el Fondo</li>
-        <li class="list-group-item">Selecciona el tipo de participacion</li>
-        <li class="list-group-item">Agrega a tus favoritos</li>
+        <li class="list-group-item">Selecciona el tipo de participacion y agregala a tus favoritos</li>
       </ul>
     </div>
     <hr>
 
 <div class="btn-group-vertical" role="group" aria-label="Basic example">
+    <h4>
+      Selecciona una Sociedad Administradora</h4>
   <% @list_of_administradoras.each do |an_administradora| %>
     <button type="button" class="btn btn-outline-secondary" ><a href="/administradoras/<%= an_administradora.id%>"><%= an_administradora.nombre_administradora %></a></button>
   <%end%>
 </div>
-
-<div>
-  <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Nombre administradora
-        </th>
-
-      </tr>
-
-      <% @list_of_administradoras.each do |an_administradora| %>
-      <tr>
-        <td>
-          <%= an_administradora.id %>
-        </td>
-
-        <td>
-          <%= an_administradora.nombre_administradora %>
-        </td>
-
-        <td>
-          <a href="/administradoras/<%= an_administradora.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-
