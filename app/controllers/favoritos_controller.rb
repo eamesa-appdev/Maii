@@ -21,7 +21,6 @@ class FavoritosController < ApplicationController
     the_favorito = Favorito.new
     the_favorito.participacion_id = params.fetch("query_participacion_id")
     the_favorito.user_id = params.fetch("query_user_id")
-    the_favorito.exit_date = params.fetch("query_exit_date")
 
     if the_favorito.valid?
       the_favorito.save

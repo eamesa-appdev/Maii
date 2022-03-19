@@ -40,6 +40,7 @@
           <th scope="col">Administradora</th>
           <th scope="col">Fondo</th>
           <th scope="col">Tipo participacion</th>
+          <th scope="col">Valor del fondo</th>
           <th scope="col">Rentabilidad diaria</th>
           <th scope="col">Rentabilidad mensual</th>
           <th scope="col">Rentabilidad semestral</th>
@@ -49,14 +50,15 @@
       <tbody>
         <% @list_of_favoritos.each do |a_favorito, count| %>
           <tr>
-            <td><%= a_favorito.participacion_id %></td>
-            <td><%= a_favorito.participacion_id %></td>
-            <td><%= a_favorito.participacion_id %></td>
-            <td><%= a_favorito.participacion_id %></td>
-            <td><%= a_favorito.participacion_id %></td>
-            <td><%= a_favorito.participacion_id %></td>
-            <td><%= a_favorito.participacion_id %></td>
-            <td><%= a_favorito.participacion_id %></td>
+            <td><%= count %></td>
+            <td><%= a_favorito.participacion.fondo.administradora.nombre_administradora %></td>
+            <td><%= a_favorito.participacion.fondo.nombre_fondo %></td>
+            <td><%= a_favorito.participacion.codigo_participaciones %></td>
+            <td><%= a_favorito.participacion.valor_fondo %></td>
+            <td><%= a_favorito.participacion.rentabilidad_diaria %></td>
+            <td><%= a_favorito.participacion.rentabilidad_mensual %></td>
+            <td><%= a_favorito.participacion.rentabilidad_semestral %></td>
+            <td><%= a_favorito.participacion.rentabilidad_anual %></td>
           </tr>
         <%end%>
       </tbody>
