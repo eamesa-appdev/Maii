@@ -10,4 +10,6 @@
 #  user_id          :integer
 #
 class Favorito < ApplicationRecord
+  belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })
+  belongs_to(:participacion, { :required => true, :class_name => "Participacion", :foreign_key => "participacion_id" })
 end
