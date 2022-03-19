@@ -1,52 +1,31 @@
+
 <div>
   <div>
     <h1>
-      List of all administradoras
+      Sociedades administradoras
     </h1>
   </div>
 </div>
-
 <hr>
+    <div>
+      <h4>
+        Sigue estos pasos para agregar un nuevo FIC favorito para comparar.
+      </h4>
+      <ul class="list-group">
+        <li class="list-group-item active">Selecciona la Sociedad Administradora</li>
+        <li class="list-group-item">Selecciona el Fondo</li>
+        <li class="list-group-item">Selecciona el tipo de participacion</li>
+        <li class="list-group-item">Agrega a tus favoritos</li>
+      </ul>
+    </div>
+    <hr>
 
-<div>
-  <div>
-    <h2>
-      Add a new administradora
-    </h2>
-
-    <form action="/insert_administradora" method="post">
-      <div>
-        <label for="nombre_administradora_box">
-          Nombre administradora
-        </label>
-
-        <input type="text" id="nombre_administradora_box" name="query_nombre_administradora">
-      </div>
-
-      <div>
-        <label for="tipo_adminsitradora_box">
-          Tipo adminsitradora
-        </label>
-
-        <input type="text" id="tipo_adminsitradora_box" name="query_tipo_adminsitradora">
-      </div>
-
-      <div>
-        <label for="fondos_count_box">
-          Fondos count
-        </label>
-
-        <input type="text" id="fondos_count_box" name="query_fondos_count">
-      </div>
-
-      <button>
-        Create administradora
-      </button>
-    </form>
-  </div>
+<div class="btn-group-vertical" role="group" aria-label="Basic example">
+  <% @list_of_administradoras.each do |an_administradora| %>
+    <button type="button" class="btn btn-outline-secondary" ><a href="/administradoras/<%= an_administradora.id%>"><%= an_administradora.nombre_administradora %></a></button>
+  <%end%>
 </div>
 
-<hr>
 <div>
   <div>
     <table border="1">
@@ -59,24 +38,6 @@
           Nombre administradora
         </th>
 
-        <th>
-          Tipo adminsitradora
-        </th>
-
-        <th>
-          Fondos count
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
 
       <% @list_of_administradoras.each do |an_administradora| %>
@@ -90,21 +51,6 @@
         </td>
 
         <td>
-          <%= an_administradora.tipo_adminsitradora %>
-        </td>
-
-        <td>
-          <%= an_administradora.fondos_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(an_administradora.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(an_administradora.updated_at) %> ago
-        </td>
-
-        <td>
           <a href="/administradoras/<%= an_administradora.id %>">
             Show details
           </a>
@@ -115,4 +61,3 @@
   </div>
 </div>
 
-<hr>

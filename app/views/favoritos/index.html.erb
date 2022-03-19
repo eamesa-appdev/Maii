@@ -8,31 +8,6 @@
   </div>
   <hr>
   <div>
-    <div>
-      <h2>
-        Para agregar un nuevo favorito, 
-      </h2>
-      <form action="/insert_favorito" method="post">
-        <div>
-          <label for="participacion_id_box">
-            Participacion
-          </label>
-          <input type="text" id="participacion_id_box" name="query_participacion_id">
-        </div>
-        <div>
-          <label for="user_id_box">
-            User
-          </label>
-          <input type="text" id="user_id_box" name="query_user_id">
-        </div>
-        <button>
-          Create favorito
-        </button>
-      </form>
-    </div>
-  </div>
-  <hr>
-  <div>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -70,3 +45,38 @@
       </tbody>
     </table>
   </div>
+  <hr>
+  <div>
+    <div>
+      <h4>
+        Sigue estos pasos para agregar un nuevo FIC favorito para comparar.
+      </h4>
+      <ul class="list-group">
+        <li class="list-group-item">Selecciona la Sociedad Administradora</li>
+        <li class="list-group-item">Selecciona el Fondo</li>
+        <li class="list-group-item">Selecciona el tipo de participacion</li>
+        <li class="list-group-item">Agrega a tus favoritos</li>
+      </ul>
+      <a class="btn btn-outline-primary" href="/administradoras" role="button">Agrega un favorito</a>
+    </div>
+    
+    <form action="/insert_favorito" method="post">
+      <div>
+        <label for="participacion_id_box">
+          Participacion
+        </label>
+        <input type="text" id="participacion_id_box" name="query_participacion_id">
+      </div>
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+      <button>
+        Create favorito
+      </button>
+    </form>
+  </div>
+</div>
+</div>
