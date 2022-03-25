@@ -1,7 +1,7 @@
 desc "Hydrate the database with some sample data to look at so that developing is easier"
 task({ :api_pull => :environment }) do
   #api = "https://www.datos.gov.co/resource/qhpu-8ixx.json"
-  two_days_ago = DateTime.now - 7
+  two_days_ago = DateTime.now - 3
   api = "https://www.datos.gov.co/resource/qhpu-8ixx.json?fecha_corte=#{two_days_ago.year}-#{two_days_ago.month}-#{two_days_ago.day}T00:00:00.000"
 
   #api = "https://www.datos.gov.co/resource/qhpu-8ixx.json?fecha_corte=#{DateTime.now-2}"

@@ -21,19 +21,13 @@
     <form action="/insert_favorito" method="post">
      <% @the_fund.tipo_participaciones.each do |una_part| %>
       <div>
-        <label for="participacion_id_box">
-          Participacion
-        </label>
-        <input type="hidden" id="participacion_id_box" name="query_participacion_id"  value="<%= una_part.id%>"
+        <input type="hidden" id="participacion_id_box" name="query_participacion_id" value="<%=una_part.id%>">
       </div>
       <div>
-        <label for="user_id_box">
-          User
-        </label>
         <input type="hidden" id="user_id_box" name="query_user_id" value="<%=@current_user.id%>">
       </div>
       <button class="btn btn-outline-secondary">
-        Agregar la participacion tipo <%= una_part.codigo_participaciones %>
+        Agregar la participacion tipo <%= una_part.codigo_participaciones %> (<%=una_part.id%>) 
       </button>
       <%end%>
     </form>
