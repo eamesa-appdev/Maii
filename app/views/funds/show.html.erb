@@ -18,8 +18,8 @@
       Selecciona una participacion del <%= @the_fund.nombre_fondo %> para agregarla a tus favoritos
     </h4>
 
-    <form action="/insert_favorito" method="post">
      <% @the_fund.tipo_participaciones.each do |una_part| %>
+    <form action="/insert_favorito" method="post">
       <div>
         <input type="hidden" id="participacion_id_box" name="query_participacion_id" value="<%=una_part.id%>">
       </div>
@@ -29,8 +29,8 @@
       <button class="btn btn-outline-secondary">
         Agregar la participacion tipo <%= una_part.codigo_participaciones %> (<%=una_part.id%>) 
       </button>
-      <%end%>
     </form>
+    <%end%>
 
     <hr>
     <div>

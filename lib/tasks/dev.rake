@@ -1,7 +1,7 @@
 desc "Hydrate the database with some sample data to look at so that developing is easier"
 task({ :api_pull => :environment }) do
   #api = "https://www.datos.gov.co/resource/qhpu-8ixx.json"
-  two_days_ago = DateTime.now - 3
+  two_days_ago = DateTime.now - 30
   api = "https://www.datos.gov.co/resource/qhpu-8ixx.json?fecha_corte=#{two_days_ago.year}-#{two_days_ago.month}-#{two_days_ago.day}T00:00:00.000"
 
   #api = "https://www.datos.gov.co/resource/qhpu-8ixx.json?fecha_corte=#{DateTime.now-2}"
@@ -53,4 +53,21 @@ part.save
 p part.errors.full_messages
 end
 
+end
+
+task({ :api_loop => :environment }) do
+  #api = "https://www.datos.gov.co/resource/qhpu-8ixx.json"
+  two_days_ago = DateTime.now - 30
+  api = "https://www.datos.gov.co/resource/qhpu-8ixx.json?fecha_corte=#{two_days_ago.year}-#{two_days_ago.month}-#{two_days_ago.day}T00:00:00.000"
+
+  #api = "https://www.datos.gov.co/resource/qhpu-8ixx.json?fecha_corte=#{DateTime.now-2}"
+  
+  raw_data = open(api).read
+  parsed_data = JSON.parse(raw_data)
+
+  parsed_data.class
+
+  #parsed_data.first.each do |k, v|
+    #puts "#{key}: #{value}"
+  #end
 end
